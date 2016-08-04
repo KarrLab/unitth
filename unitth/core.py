@@ -6,6 +6,7 @@
 :License: MIT
 """
 
+from pkg_resources import resource_filename
 import subprocess
 
 
@@ -26,12 +27,13 @@ class UnitTH(object):
             generate_exec_time_graphs (:obj:`bool`, optional): Whether execution time graphs shall be generated
             html_report_dir (:obj:`str`, optional): directory to store generated HTML history report
         """
+              
         subprocess.check_call(''
                               + 'java '
                               + ('-Dunitth.xml.report.filter=%s ' % xml_report_filter)
                               + ('-Dunitth.html.report.path=%s ' % html_report_path)
                               + ('-Dunitth.generate.exectimegraphs=%s ' % ('%s' % generate_exec_time_graphs).lower())
                               + ('-Dunitth.report.dir=%s ' % html_report_dir)
-                              + '-jar lib/unitth/unitth.jar '
+                              + ('-jar %s ' % resource_filename('unitth', 'lib/unitth/unitth.jar'))
                               + xml_report_dir,
                               shell=True)

@@ -19,7 +19,7 @@ setup(
     keywords='unit test xunit junit unitth HTML history',
     packages=find_packages(),
     package_data={
-        'unitth': ['lib'],
+        'unitth': ['lib/unitth/unitth.jar'],
     },
     install_requires=install_requires,
     classifiers=[
