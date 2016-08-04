@@ -1,0 +1,12 @@
+# compiled files
+*.pyc
+
+#distribution files
+build/
+dist/
+
+# .rst-formatted README
+README.rst
+
+# compiled documentation
+docs/_build
