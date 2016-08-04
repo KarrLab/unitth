@@ -1,7 +1,8 @@
-[![PyPI package](https://badge.fury.io/py/unitth.svg)](https://pypi.python.org/pypi/unitth)
+[![PyPI package](https://img.shields.io/pypi/v/unitth.svg)](https://pypi.python.org/pypi/unitth)
 [![Documentation](https://readthedocs.org/projects/unitth/badge/?version=latest)](http://unitth.readthedocs.org)
 [![Test results](https://circleci.com/gh/KarrLab/unitth.svg?style=shield)](https://circleci.com/gh/KarrLab/unitth)
 [![Test coverage](https://coveralls.io/repos/github/KarrLab/unitth/badge.svg)](https://coveralls.io/github/KarrLab/unitth)
+[![License](https://img.shields.io/github/license/KarrLab/unitth.svg)](LICENSE.txt)
 
 # unitth
 
