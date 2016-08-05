@@ -6,6 +6,7 @@
 :License: MIT
 """
 
+from past import autotranslate
 from nose2unitth.core import Converter as nose2unitth
 from junit2htmlreport.parser import Junit as JunitParser
 from unitth.core import UnitTH
@@ -39,10 +40,10 @@ class TestUnitTH(unittest.TestCase):
         nose2unitth.run(os.path.join(nose_dir, '1.xml'), os.path.join(unitth_dir, '1'))
         nose2unitth.run(os.path.join(nose_dir, '2.xml'), os.path.join(unitth_dir, '2'))
 
-        with open(os.path.join(os.path.join(unitth_dir, '1', 'index.html')), 'wb') as html_file:
-            print >> html_file, JunitParser(os.path.join(nose_dir, '1.xml')).html()
-        with open(os.path.join(os.path.join(unitth_dir, '2', 'index.html')), 'wb') as html_file:
-            print >> html_file, JunitParser(os.path.join(nose_dir, '2.xml')).html()
+        with open(os.path.join(os.path.join(unitth_dir, '1', 'index.html')), 'w') as html_file:
+            html_file.write(JunitParser(os.path.join(nose_dir, '1.xml')).html())
+        with open(os.path.join(os.path.join(unitth_dir, '2', 'index.html')), 'w') as html_file:
+            html_file.write(JunitParser(os.path.join(nose_dir, '2.xml')).html())
 
         self._report_dir = report_dir
         self._nose_dir = nose_dir
