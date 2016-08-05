@@ -6,7 +6,6 @@
 :License: MIT
 """
 
-from past import autotranslate
 from nose2unitth.core import Converter as nose2unitth
 from junit2htmlreport.parser import Junit as JunitParser
 from unitth.core import UnitTH
