@@ -2,7 +2,7 @@
 [![Documentation](https://readthedocs.org/projects/unitth/badge/?version=latest)](http://unitth.readthedocs.org)
 [![Test results](https://circleci.com/gh/KarrLab/unitth.svg?style=shield)](https://circleci.com/gh/KarrLab/unitth)
 [![Test coverage](https://coveralls.io/repos/github/KarrLab/unitth/badge.svg)](https://coveralls.io/github/KarrLab/unitth)
-[![License](https://img.shields.io/github/license/KarrLab/unitth.svg)](LICENSE.txt)
+[![License](https://img.shields.io/github/license/KarrLab/unitth.svg)](LICENSE)
 
 # unitth
 
@@ -101,7 +101,7 @@ unitth --xml_report_filter --html_report_dir reports/html "reports/unitth/*"
 Please see the [API documentation](http://unitth.readthedocs.io).
 
 ## License
-The build utilities are released under the [MIT license](LICENSE.txt).
+The build utilities are released under the [MIT license](LICENSE).
 
 ## Development team
 This package was developed by [Jonathan Karr](http://www.karrlab.org) at the Icahn School of Medicine at Mount Sinai in New York, USA.
