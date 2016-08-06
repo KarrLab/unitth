@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 # version
-version = '0.0.5'
+version = '0.0.6'
 
 # parse requirements.txt
 install_requires = [line.rstrip() for line in open('requirements.txt')]
@@ -12,7 +12,7 @@ setup(
     version=version,
     description="Python interface for UnitTH unit test history report generator",
     url="https://github.com/KarrLab/unitth",
-    download_url='https://github.com/KarrLab/unitth/tarball/%s' % version,
+    download_url='https://github.com/KarrLab/unitth/tarball/{}'.format(version),
     author="Jonathan Karr",
     author_email="jonrkarr@gmail.com",
     license="MIT",
