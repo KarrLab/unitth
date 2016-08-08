@@ -27,10 +27,6 @@ class BaseController(CementBaseController):
 
     @expose(hide=True)
     def default(self):
-        """ Archive a coverage report:
-        * Copy report to artifacts directory
-        * Upload report to Coveralls
-        """
         args = self.app.pargs
         UnitTH.run(args.xml_report_dir,
                    xml_report_filter=args.xml_report_filter or '',
@@ -43,7 +39,7 @@ class BaseController(CementBaseController):
 class App(CementApp):
 
     class Meta:
-        label = 'unitth'        
+        label = 'unitth'
         base_controller = 'base'
         handlers = [BaseController]
 
