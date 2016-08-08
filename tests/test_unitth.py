@@ -12,15 +12,12 @@ from unitth.core import UnitTH
 import shutil
 import subprocess
 import os
+import sys
 import tempfile
 import unittest
 
 
 class TestUnitTH(unittest.TestCase):
-    TEST_API = True
-    TEST_CLI = False
-    PROJECT_NAME = 'Karr-Lab-build-utils'
-    COVERALLS_REPO_TOKEN = ''
 
     def setUp(self):
         report_dir = tempfile.mkdtemp()
@@ -57,11 +54,11 @@ class TestUnitTH(unittest.TestCase):
         self.assertTrue(os.path.isfile(os.path.join(self._html_dir, 'index.html')))
 
     def test_cli(self):
-        subprocess.check_call(['python', 'unitth/bin/run.py', 
-            os.path.join(self._unitth_dir, '*'), 
-            '--xml_report_filter', '', 
-            '--html_report_dir', self._html_dir,
-            ])
+        subprocess.check_call(['python' + str(sys.version_info[0]), 'unitth/bin/run.py',
+                               os.path.join(self._unitth_dir, '*'),
+                               '--xml_report_filter', '',
+                               '--html_report_dir', self._html_dir,
+                               ])
         self.assertTrue(os.path.isfile(os.path.join(self._html_dir, 'index.html')))
 
 
