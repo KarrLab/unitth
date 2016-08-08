@@ -1,13 +1,6 @@
 unitth package
 ==============
 
-Subpackages
------------
-
-.. toctree::
-
-    unitth.bin
-
 Submodules
 ----------
 
