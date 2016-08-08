@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 # version
-version = '0.0.6'
+version = '0.0.7'
 
 # parse requirements.txt
 install_requires = [line.rstrip() for line in open('requirements.txt')]
@@ -31,7 +31,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'unitth = unitth.bin.run:main',
+            'unitth = unitth.__main__:main',
         ],
     },
 )

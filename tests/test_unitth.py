@@ -9,8 +9,9 @@
 from nose2unitth.core import Converter as nose2unitth
 from junit2htmlreport.parser import Junit as JunitParser
 from unitth.core import UnitTH
+from unitth.__main__ import App as UnitThCli
+import nose
 import shutil
-import subprocess
 import os
 import sys
 import tempfile
@@ -29,8 +30,9 @@ class TestUnitTH(unittest.TestCase):
         os.mkdir(unitth_dir)
         os.mkdir(html_dir)
 
-        subprocess.check_call(['nosetests', 'tests/test_unitth.py:TestDummy.test_dummy_test',
-                               '--with-xunit', '--xunit-file', os.path.join(nose_dir, '1.xml')])
+        if not nose.run(argv=['nosetests', 'tests/test_unitth.py:TestDummy.test_dummy_test',
+                              '--with-xunit', '--xunit-file', os.path.join(nose_dir, '1.xml')]):
+            sys.exit(1)
         shutil.copyfile(os.path.join(nose_dir, '1.xml'), os.path.join(nose_dir, '2.xml'))
 
         nose2unitth.run(os.path.join(nose_dir, '1.xml'), os.path.join(unitth_dir, '1'))
@@ -51,14 +53,17 @@ class TestUnitTH(unittest.TestCase):
 
     def test_api(self):
         UnitTH.run(os.path.join(self._unitth_dir, '*'), xml_report_filter='', html_report_dir=self._html_dir)
-        self.assertTrue(os.path.isfile(os.path.join(self._html_dir, 'index.html')))
+        self.assertTrue(os.path.isfile(os.path  .join(self._html_dir, 'index.html')))
 
     def test_cli(self):
-        subprocess.check_call(['python' + str(sys.version_info[0]), 'unitth/bin/run.py',
-                               os.path.join(self._unitth_dir, '*'),
-                               '--xml_report_filter', '',
-                               '--html_report_dir', self._html_dir,
-                               ])
+        argv = [
+            os.path.join(self._unitth_dir, '*'),
+            '--xml-report-filter', '',
+            '--html-report-dir', self._html_dir,
+        ]
+        with UnitThCli(argv=argv) as app:
+            app.run()
+
         self.assertTrue(os.path.isfile(os.path.join(self._html_dir, 'index.html')))
 
 
