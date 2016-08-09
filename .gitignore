@@ -11,3 +11,6 @@ README.rst
 
 # compiled documentation
 docs/_build
+
+# coverage files
+.coverage*
