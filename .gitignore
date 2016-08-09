@@ -4,6 +4,7 @@
 #distribution files
 build/
 dist/
+*.egg-info
 
 # .rst-formatted README
 README.rst

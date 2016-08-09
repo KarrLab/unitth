@@ -17,7 +17,7 @@ setup(
     author_email="jonrkarr@gmail.com",
     license="MIT",
     keywords='unit test xunit junit unitth HTML history',
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests', 'tests.*']),
     package_data={
         'unitth': ['lib/unitth/unitth.jar'],
     },
