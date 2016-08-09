@@ -1,18 +1,16 @@
 from setuptools import setup, find_packages
+import unitth
 import os
-
-# version
-version = '0.0.7'
 
 # parse requirements.txt
 install_requires = [line.rstrip() for line in open('requirements.txt')]
 
 setup(
     name="unitth",
-    version=version,
+    version=unitth.__version__,
     description="Python interface for UnitTH unit test history report generator",
     url="https://github.com/KarrLab/unitth",
-    download_url='https://github.com/KarrLab/unitth/tarball/{}'.format(version),
+    download_url='https://github.com/KarrLab/unitth/tarball/{}'.format(unitth.__version__),
     author="Jonathan Karr",
     author_email="jonrkarr@gmail.com",
     license="MIT",
