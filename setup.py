@@ -2,9 +2,11 @@ from setuptools import setup, find_packages
 import unitth
 import os
 
-# parse requirements.txt
+# parse dependencies and their links from requirements.txt files
 install_requires = [line.rstrip() for line in open('requirements.txt')]
+tests_require = [line.rstrip() for line in open('tests/requirements.txt')]
 
+# install package
 setup(
     name="unitth",
     version=unitth.__version__,
@@ -20,6 +22,7 @@ setup(
         'unitth': ['lib/unitth/unitth.jar'],
     },
     install_requires=install_requires,
+    tests_require=tests_require,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

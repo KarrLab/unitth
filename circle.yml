@@ -1,18 +1,20 @@
 machine:
   python:
-    version: 2.7.11
+    version: 2.7.12
   post:
-    - pyenv global 2.7.11 3.5.1
+    - pyenv global 2.7.12 3.5.2
 dependencies:
   cache_directories:
-    - /home/ubuntu/virtualenvs/venv-2.7.11
-    - /opt/circleci/python/3.5.1
+    - /home/ubuntu/virtualenvs/venv-2.7.12
+    - /opt/circleci/python/3.5.2
     - /opt/circleci/.pyenv/shims
   pre:
-    - pip2 install -e -U .
-    - pip3 install -e -U .
-    - pip2 install -U git+git://github.com/KarrLab/Karr-Lab-build-utils.git
-    - pip3 install -U git+git://github.com/KarrLab/Karr-Lab-build-utils.git
+    - pip2 install -e .
+    - pip3 install -e .
+    
+    - pip2 install git+https://github.com/KarrLab/Karr-Lab-build-utils.git
+    - pip3 install git+https://github.com/KarrLab/Karr-Lab-build-utils.git
+    
     - karr-lab-build-utils-2 install-requirements
     - karr-lab-build-utils-3 install-requirements
 test:
