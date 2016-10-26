@@ -35,6 +35,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.googleanalytics',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -357,6 +358,11 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+
+
+# -- Google analytics ID --------------------------------------------------
+
+googleanalytics_id = 'UA-86340737-1'
 
 
 # -- Run sphinx-apidoc within ReadTheDocs on sphinx-build -----------------
