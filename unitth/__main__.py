@@ -20,6 +20,10 @@ class BaseController(CementBaseController):
                                                    help='Whether execution time graphs shall be generated')),
             (['--html-report-dir'], dict(type=str, default='report.th',
                                          help='directory to store generated HTML history report')),
+            (['--initial_java_heap_size'], dict(type=str, default=None,
+                             help='Initial Java heap size')),
+            (['--maximum_java_heap_size'], dict(type=str, default=None,
+                             help='Maximum Java heap size')),
         ]
 
     @expose(hide=True)
@@ -29,7 +33,9 @@ class BaseController(CementBaseController):
                    xml_report_filter=args.xml_report_filter or '',
                    html_report_path=args.html_report_path,
                    generate_exec_time_graphs=args.generate_exec_time_graphs,
-                   html_report_dir=args.html_report_dir
+                   html_report_dir=args.html_report_dir, 
+                   initial_java_heap_size=args.initial_java_heap_size,
+                   maximum_java_heap_size=args.maximum_java_heap_size,
                    )
 
 

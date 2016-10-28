@@ -14,7 +14,9 @@ class UnitTH(object):
     """ UnitTH python interface """
 
     @staticmethod
-    def run(xml_report_dir, xml_report_filter='TEST-', html_report_path='.', generate_exec_time_graphs=True, html_report_dir='report.th'):
+    def run(xml_report_dir, xml_report_filter='TEST-', html_report_path='.', 
+        generate_exec_time_graphs=True, html_report_dir='report.th',
+        initial_java_heap_size=None, maximum_java_heap_size=None):
         """ Use UnitTH to generate a test history report
 
         Args:
@@ -26,13 +28,23 @@ class UnitTH(object):
                 individual builds)
             generate_exec_time_graphs (:obj:`bool`, optional): Whether execution time graphs shall be generated
             html_report_dir (:obj:`str`, optional): directory to store generated HTML history report
+            initial_java_heap_size (:obj:`str`, optional): initial Java heap size
+            maximum_java_heap_size (:obj:`str`, optional): maximum Java heap size
         """
 
-        cmd = 'java ' \
-            + '-Dunitth.xml.report.filter={} '.format(xml_report_filter) \
-            + '-Dunitth.html.report.path={} '.format(html_report_path) \
-            + '-Dunitth.generate.exectimegraphs={} '.format('{}'.format(generate_exec_time_graphs).lower()) \
-            + '-Dunitth.report.dir={} '.format(html_report_dir) \
-            + '-jar {} '.format(resource_filename('unitth', 'lib/unitth/unitth.jar')) \
-            + xml_report_dir
-        subprocess.check_call(cmd, shell=True)
+        cmd = []
+        cmd.append('java')
+
+        if initial_java_heap_size:
+            cmd.append('-Xms{}'.format(initial_java_heap_size))
+        if maximum_java_heap_size:
+            cmd.append('-Xmx{}'.format(maximum_java_heap_size))
+
+        cmd.append('-Dunitth.xml.report.filter={}'.format(xml_report_filter))
+        cmd.append('-Dunitth.html.report.path={}'.format(html_report_path))
+        cmd.append('-Dunitth.generate.exectimegraphs={}'.format('{}'.format(generate_exec_time_graphs).lower()))
+        cmd.append('-Dunitth.report.dir={}'.format(html_report_dir))
+        cmd.append('-jar {}'.format(resource_filename('unitth', 'lib/unitth/unitth.jar')))
+        cmd.append(xml_report_dir)
+
+        subprocess.check_call(' '.join(cmd), shell=True)
