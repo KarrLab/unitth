@@ -4,6 +4,7 @@
 [![Test coverage](https://coveralls.io/repos/github/KarrLab/unitth/badge.svg)](https://coveralls.io/github/KarrLab/unitth)
 [![Code analysis](https://codeclimate.com/github/KarrLab/unitth/badges/gpa.svg)](https://codeclimate.com/github/KarrLab/unitth)
 [![License](https://img.shields.io/github/license/KarrLab/unitth.svg)](LICENSE)
+![Analytics](https://ga-beacon.appspot.com/UA-86759801-1/unitth/README.md?pixel)
 
 # unitth
 
