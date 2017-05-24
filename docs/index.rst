@@ -1,24 +1,16 @@
-.. unitth documentation master file, created by
-   sphinx-quickstart on Thu Aug  4 11:39:37 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+`unitth` documentation
+======================
 
-Welcome to unitth's documentation!
-==================================
+This package provides a Python method and command line interface for generating HTML reports of unit test histories. The package is a Python interface for the `UnitTH <http://junitth.sourceforge.net>`_.
 
-Contents:
+Contents
+--------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   source/modules.rst
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   installation.rst
+   cli.rst
+   API documentation <source/modules.rst>
+   examples.rst
+   about.rst
