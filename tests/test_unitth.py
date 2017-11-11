@@ -10,12 +10,14 @@ from nose2unitth.core import Converter as nose2unitth
 from junit2htmlreport.parser import Junit as JunitParser
 from unitth.core import UnitTH
 from unitth.__main__ import App as UnitThCli
+import mock
 import nose
 import shutil
 import os
 import sys
 import tempfile
 import unittest
+import unitth
 
 
 class TestUnitTH(unittest.TestCase):
@@ -65,6 +67,13 @@ class TestUnitTH(unittest.TestCase):
             app.run()
 
         self.assertTrue(os.path.isfile(os.path.join(self._html_dir, 'index.html')))
+
+    def test_raw_cli(self):
+        with mock.patch('sys.argv', ['unitth', '--help']):
+            with self.assertRaises(SystemExit) as context:
+                unitth.__main__.main()
+                self.assertRegexpMatches(context.Exception, 'usage: unitth')
+
 
     def test_low_memory(self):
         UnitTH.run(os.path.join(self._unitth_dir, '*'), xml_report_filter='', html_report_dir=self._html_dir, 
