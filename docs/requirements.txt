@@ -1,5 +1,6 @@
 cement
 configparser
+pbr # needed by sphinxcontrib-spelling and must be installed first for Python 2
 six
 Sphinx >= 1.6
 sphinx_rtd_theme
