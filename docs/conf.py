@@ -40,7 +40,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinxcontrib.bibtex',
-    'sphinxcontrib.googleanalytics'
+    'sphinxcontrib.googleanalytics',
     'sphinxcontrib.spelling',
 ]
 
