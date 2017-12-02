@@ -1,7 +1,17 @@
 from setuptools import setup, find_packages
 import os
 import re
-import unitth
+
+# get long description
+if os.path.isfile('README.rst'):
+    with open('README.rst', 'r') as file:
+        long_description = file.read()
+else:
+    long_description = ''
+
+# get version
+with open('unitth/VERSION', 'r') as file:
+    version = file.read().strip()
 
 # parse dependencies and their links from requirements.txt files
 install_requires = []
@@ -32,17 +42,21 @@ dependency_links = list(set(dependency_links))
 # install package
 setup(
     name="unitth",
-    version=unitth.__version__,
+    version=version,
     description="Python interface for UnitTH unit test history report generator",
+    long_description=long_description,
     url="https://github.com/KarrLab/unitth",
-    download_url='https://github.com/KarrLab/unitth/tarball/{}'.format(unitth.__version__),
+    download_url='https://github.com/KarrLab/unitth',
     author="Jonathan Karr",
     author_email="jonrkarr@gmail.com",
     license="MIT",
     keywords='unit test xunit junit unitth HTML history',
     packages=find_packages(exclude=['tests', 'tests.*']),
     package_data={
-        'unitth': ['lib/unitth/unitth.jar'],
+        'unitth': [
+            'VERSION',
+            'lib/unitth/unitth.jar',
+        ],
     },
     install_requires=install_requires,
     tests_require=tests_require,
