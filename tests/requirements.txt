@@ -1,4 +1,4 @@
-git+https://github.com/KarrLab/junit2html.git#egg=junit2html >=4
+git+https://github.com/KarrLab/junit2html.git#egg=junit2html # >= 4
 mock
 nose
 nose2unitth

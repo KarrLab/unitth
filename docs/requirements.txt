@@ -1,8 +1,8 @@
 cement
 configparser
 six
-Sphinx >= 1.6
+sphinx >= 1.6
 sphinx_rtd_theme
-robpol86-sphinxcontrib-googleanalytics
-sphinxcontrib-bibtex
-sphinxcontrib-spelling
+robpol86_sphinxcontrib_googleanalytics
+sphinxcontrib_bibtex
+sphinxcontrib_spelling
