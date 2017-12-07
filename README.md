@@ -2,7 +2,7 @@
 [![Documentation](https://readthedocs.org/projects/unitth/badge/?version=latest)](http://unitth.readthedocs.org)
 [![Test results](https://circleci.com/gh/KarrLab/unitth.svg?style=shield)](https://circleci.com/gh/KarrLab/unitth)
 [![Test coverage](https://coveralls.io/repos/github/KarrLab/unitth/badge.svg)](https://coveralls.io/github/KarrLab/unitth)
-[![Code analysis](https://codeclimate.com/github/KarrLab/unitth/badges/gpa.svg)](https://codeclimate.com/github/KarrLab/unitth)
+[![Code analysis](https://api.codeclimate.com/v1/badges/e6819121e1e8ca0485a0/maintainability)](https://codeclimate.com/github/KarrLab/unitth)
 [![License](https://img.shields.io/github/license/KarrLab/unitth.svg)](LICENSE)
 ![Analytics](https://ga-beacon.appspot.com/UA-86759801-1/unitth/README.md?pixel)
 
