@@ -1,4 +1,4 @@
-junit2html >= 4
+junit2html >= 5
 mock
 nose
 nose2unitth
