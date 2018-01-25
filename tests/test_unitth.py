@@ -74,10 +74,9 @@ class TestUnitTH(unittest.TestCase):
                 unitth.__main__.main()
                 self.assertRegexpMatches(context.Exception, 'usage: unitth')
 
-
     def test_low_memory(self):
-        UnitTH.run(os.path.join(self._unitth_dir, '*'), xml_report_filter='', html_report_dir=self._html_dir, 
-            initial_java_heap_size='32m', maximum_java_heap_size='64m')
+        UnitTH.run(os.path.join(self._unitth_dir, '*'), xml_report_filter='', html_report_dir=self._html_dir,
+                   initial_java_heap_size='32m', maximum_java_heap_size='64m')
         self.assertTrue(os.path.isfile(os.path  .join(self._html_dir, 'index.html')))
 
 
