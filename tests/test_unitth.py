@@ -79,6 +79,9 @@ class TestUnitTH(unittest.TestCase):
                    initial_java_heap_size='32m', maximum_java_heap_size='64m')
         self.assertTrue(os.path.isfile(os.path  .join(self._html_dir, 'index.html')))
 
+    def test_api(self):
+        self.assertIsInstance(unitth.UnitTH, type)
+
 
 class TestDummy(object):
 
