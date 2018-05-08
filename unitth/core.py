@@ -44,7 +44,8 @@ class UnitTH(object):
         cmd.append('-Dunitth.html.report.path={}'.format(html_report_path))
         cmd.append('-Dunitth.generate.exectimegraphs={}'.format('{}'.format(generate_exec_time_graphs).lower()))
         cmd.append('-Dunitth.report.dir={}'.format(html_report_dir))
-        cmd.append('-jar {}'.format(resource_filename('unitth', 'lib/unitth/unitth.jar')))
+        cmd.append('-jar')
+        cmd.append('"{}"'.format(resource_filename('unitth', 'lib/unitth/unitth.jar')))
         cmd.append(xml_report_dir)
 
         subprocess.check_call(' '.join(cmd), shell=True)
