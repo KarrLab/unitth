@@ -1,6 +1,7 @@
 from cement.core.foundation import CementApp
 from cement.core.controller import CementBaseController, expose
 from unitth.core import UnitTH
+import unitth
 
 
 class BaseController(CementBaseController):
@@ -10,6 +11,7 @@ class BaseController(CementBaseController):
         label = 'base'
         description = "Generate HTML unit test history report"
         arguments = [
+            (['-v', '--version'], dict(action='version', version=unitth.__version__)),
             (['xml_report_dir'], dict(type=str,
                                       help='Parent directory of XML reports of individual builds to generate a history report of')),
             (['--xml-report-filter'], dict(type=str, default='TEST-', nargs='?',
