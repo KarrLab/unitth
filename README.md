@@ -1,5 +1,5 @@
 [![PyPI package](https://img.shields.io/pypi/v/unitth.svg)](https://pypi.python.org/pypi/unitth)
-[![Documentation](https://img.shields.io/badge/docs-latest-green.svg)](http://docs.karrlab.org/unitth)
+[![Documentation](https://readthedocs.org/projects/unitth/badge/?version=latest)](http://docs.karrlab.org/unitth)
 [![Test results](https://circleci.com/gh/KarrLab/unitth.svg?style=shield)](https://circleci.com/gh/KarrLab/unitth)
 [![Test coverage](https://coveralls.io/repos/github/KarrLab/unitth/badge.svg)](https://coveralls.io/github/KarrLab/unitth)
 [![Code analysis](https://api.codeclimate.com/v1/badges/e6819121e1e8ca0485a0/maintainability)](https://codeclimate.com/github/KarrLab/unitth)
