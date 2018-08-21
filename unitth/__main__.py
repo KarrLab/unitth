@@ -1,10 +1,9 @@
-from cement.core.foundation import CementApp
-from cement.core.controller import CementBaseController, expose
 from unitth.core import UnitTH
+import cement
 import unitth
 
 
-class BaseController(CementBaseController):
+class BaseController(cement.Controller):
     """ Base controller for command line application """
 
     class Meta:
@@ -28,8 +27,8 @@ class BaseController(CementBaseController):
                              help='Maximum Java heap size')),
         ]
 
-    @expose(hide=True)
-    def default(self):
+    @cement.ex(hide=True)
+    def _default(self):
         args = self.app.pargs
         UnitTH.run(args.xml_report_dir,
                    xml_report_filter=args.xml_report_filter or '',
@@ -41,7 +40,7 @@ class BaseController(CementBaseController):
                    )
 
 
-class App(CementApp):
+class App(cement.App):
     """ Command line application """
 
     class Meta:
