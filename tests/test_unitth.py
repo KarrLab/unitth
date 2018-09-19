@@ -72,7 +72,7 @@ class TestUnitTH(unittest.TestCase):
         with mock.patch('sys.argv', ['unitth', '--help']):
             with self.assertRaises(SystemExit) as context:
                 unitth.__main__.main()
-                self.assertRegexpMatches(context.Exception, 'usage: unitth')
+                self.assertRegex(context.Exception, 'usage: unitth')
 
     def test_low_memory(self):
         UnitTH.run(os.path.join(self._unitth_dir, '*'), xml_report_filter='', html_report_dir=self._html_dir,
