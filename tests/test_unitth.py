@@ -83,7 +83,7 @@ class TestUnitTH(unittest.TestCase):
         self.assertIsInstance(unitth.UnitTH, type)
 
 
-class TestDummy(object):
+class TestDummy(unittest.TestCase):
 
     def test_dummy_test(self):
         pass
