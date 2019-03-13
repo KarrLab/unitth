@@ -11,9 +11,15 @@
 This package provides a Python method and command line interface for generating HTML reports of unit test histories. The package is a Python interface for the [UnitTH](http://junitth.sourceforge.net).
 
 ## Installation
-```
-pip install unitth
-```
+* Latest release from PyPI
+  ```
+  pip install unitth
+  ```
+
+* Latest revision from GitHub
+  ```
+  pip install git+https://github.com/KarrLab/unitth.git#egg=unitth
+  ```
 
 ## Usage
 
