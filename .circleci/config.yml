@@ -1,9 +1,22 @@
-version: 2
+version: 2.1
+
+workflows:
+  build:
+    jobs:
+      - build
+
 jobs:
   build:
     working_directory: /root/project
     docker:
       - image: karrlab/wc_env_dependencies:latest
+    parameters:
+      UPSTREAM_REPONAME:
+        type: string
+        default:
+      UPSTREAM_BUILD_NUM:
+        type: integer
+        default: 0
     steps:
       # Clone repository
       - checkout
@@ -70,6 +83,9 @@ jobs:
       - run:
           name: Generate reports, archive results, and send notifications
           when: always
+          environment:
+            UPSTREAM_REPONAME: << pipeline.parameters.UPSTREAM_REPONAME >>
+            UPSTREAM_BUILD_NUM: << pipeline.parameters.UPSTREAM_BUILD_NUM >>
           command: |
             if [[ -f TEST_EXIT_CODE ]]; then
               INSTALLATION_EXIT_CODE=0
