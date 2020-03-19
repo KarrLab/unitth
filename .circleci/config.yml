@@ -13,7 +13,7 @@ jobs:
     parameters:
       UPSTREAM_REPONAME:
         type: string
-        default:
+        default: ""
       UPSTREAM_BUILD_NUM:
         type: integer
         default: 0
